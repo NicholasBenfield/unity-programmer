@@ -38,3 +38,10 @@ Once all the objects have been completed, the games moves to the next scene.
 
 5. Final Scene.
 Will display the final inventory and score. 
+
+
+2/17/2020
+After setting up a couple of scenes and a couple of the providied Unity Test Project Towns. Worked on getting spawners to generate an item and move it across the view of the camera. Initally looked at having them spawn at certain points within the map. Created a basic spawner that moved items across the camera. Worked on getting it to drop when getting clicked. Setup a spawn rate for the spawner so I can adjust them individually when they get placed all over the map.
+
+2/18/2020
+Now that Items have dropped, they need to be transfered into the next scene.
