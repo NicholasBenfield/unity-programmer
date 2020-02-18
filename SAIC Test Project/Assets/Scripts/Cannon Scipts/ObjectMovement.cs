@@ -11,10 +11,5 @@ public class ObjectMovement : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.forward * Time.deltaTime * speed);
-
-        if(cannonBall.GetComponent<Rigidbody>().useGravity == false)
-        {
-            
-        }
     }
 }
