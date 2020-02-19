@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ObjectMovement : MonoBehaviour
 {
-    public GameObject cannonBall;
     public int speed;
 
     // Update is called once per frame
@@ -12,4 +11,6 @@ public class ObjectMovement : MonoBehaviour
     {
         transform.Translate(Vector3.forward * Time.deltaTime * speed);
     }
+
 }
+

@@ -44,4 +44,4 @@ Will display the final inventory and score.
 After setting up a couple of scenes and a couple of the providied Unity Test Project Towns. Worked on getting spawners to generate an item and move it across the view of the camera. Initally looked at having them spawn at certain points within the map. Created a basic spawner that moved items across the camera. Worked on getting it to drop when getting clicked. Setup a spawn rate for the spawner so I can adjust them individually when they get placed all over the map.
 
 2/18/2020
-Now that Items have dropped, they need to be transfered into the next scene.
+Now that Items have dropped, they need to be transfered into the next scene.Created a gameobject to hold all the items that were dropped.Made it so that when an object is clicked it shifts them forward/backwards by 1 unit to avoid collisions. Also have it so the collisions between spawn rates don't collide and push them along faster. Created a basic timer to have the game timed.

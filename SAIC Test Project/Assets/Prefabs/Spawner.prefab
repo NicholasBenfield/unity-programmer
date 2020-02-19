@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: 6972089540783889545}
   - component: {fileID: 6972089540783889546}
   m_Layer: 0
-  m_Name: Cannon
+  m_Name: Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -138,8 +138,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cannonBall: {fileID: 5972011491892934170, guid: cb76b7be3f646d048bc7696f94096e41,
     type: 3}
+  barrell: {fileID: 766261273764401930, guid: 941dad7a911c5e2438a6a17a628f1ea4, type: 3}
+  shooterItem: {fileID: 5978899644927513442, guid: 4964ae82c8591a74a8f58db7b9295683,
+    type: 3}
+  keepAlive: {fileID: 0}
   spawner: {fileID: 6972089539332607241}
-  clone: {fileID: 0}
   secondsBetweenSpawn: 0
   elapsedTime: 0
 --- !u!1 &6972089540899404822
