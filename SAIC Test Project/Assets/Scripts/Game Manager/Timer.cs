@@ -2,10 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
     public Text text;
+    public GameObject[] respawns;
+    public GameObject respawn;
+
 
     private float timer;
     private float minutes;
@@ -13,8 +17,14 @@ public class Timer : MonoBehaviour
 
     void Start()
     {
-        timer = 121;
+        timer = 20;
         minutes = (timer / 60);
+
+        if(respawns == null)
+        {
+            respawns = GameObject.FindGameObjectsWithTag("Respawn");
+        }
+       
     }
     void Update()
     {
@@ -37,6 +47,8 @@ public class Timer : MonoBehaviour
 
     void GameOver()
     {
+        GameObject.FindGameObjectsWithTag("Respawn");
 
+        SceneManager.LoadScene(2);
     }
 }
