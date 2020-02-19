@@ -6,15 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class GameManagers : MonoBehaviour
 {
-    public Text timerText;
-    public GameObject[] respawners;
-    public GameObject respawn;
     public float timer;
-
-
+    public Text timerText;
 
     private float minutes;
     private float seconds;
+    private GameObject[] respawners;
+    private GameObject respawn;
 
 
     // Start is called before the first frame update
@@ -24,7 +22,7 @@ public class GameManagers : MonoBehaviour
 
         respawners = GameObject.FindGameObjectsWithTag("Respawn");
 
-        if(SceneManager.GetActiveScene().buildIndex == 2)
+        if (SceneManager.GetActiveScene().buildIndex == 2)
         {
             for (int i = 0; i < respawners.Length; i++)
             {
