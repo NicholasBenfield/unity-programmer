@@ -7,6 +7,9 @@ using UnityEngine.SceneManagement;
 public class GameManagers : MonoBehaviour
 {
     public float timer;
+    public int cannonBallCount;
+    public int barrelCount;
+    public int shooterItemCount;
     public Text timerText;
 
     private float minutes;
@@ -14,13 +17,16 @@ public class GameManagers : MonoBehaviour
     private GameObject[] respawners;
     private GameObject respawn;
 
-
     // Start is called before the first frame update
     void Start()
     {
+        GameObject[] timers;
+        
         minutes = (timer / 60);
 
         respawners = GameObject.FindGameObjectsWithTag("Respawn");
+        timers = GameObject.FindGameObjectsWithTag("UI Text");
+      
 
         if (SceneManager.GetActiveScene().buildIndex == 2)
         {
@@ -28,6 +34,8 @@ public class GameManagers : MonoBehaviour
             {
                 respawners[i].transform.gameObject.SetActive(false);
             }
+
+            timers[0].transform.gameObject.SetActive(false);
         }
 
     }

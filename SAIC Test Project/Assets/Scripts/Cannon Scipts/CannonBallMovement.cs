@@ -27,7 +27,7 @@ public class CannonBallMovement : MonoBehaviour
     void Update()
     {
         Spawn(Random.Range(0, 3));
-
+        /*
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -37,13 +37,14 @@ public class CannonBallMovement : MonoBehaviour
                 ObjectChange(hit.collider.gameObject);
             }
         }
+        */
     }
 
     void ObjectChange(GameObject other)
     {
         if (other != null && other.tag == "Item" && !other.transform.IsChildOf(keepAlive.transform))
         {
-            other.GetComponent<Rigidbody>().useGravity = true;
+            
             adjustCollider(other);
 
             ObjectMovement movementSpeed = other.GetComponent<ObjectMovement>();

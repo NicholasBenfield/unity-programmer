@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5972011491892934169}
   - component: {fileID: 136385630064516942}
   - component: {fileID: 114829546376584988}
+  - component: {fileID: 114997413013041164}
   m_Layer: 0
   m_Name: Cannon Ball
   m_TagString: Item
@@ -137,3 +138,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+--- !u!114 &114997413013041164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5972011491892934170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c04769675456f431d9b772d41ed4fba3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 5972011491892934170}

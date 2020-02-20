@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6036822196014607451}
   - component: {fileID: 8378953564396160879}
   - component: {fileID: 54062023529028718}
+  - component: {fileID: 114492810931742430}
   m_Layer: 0
   m_Name: Shooter Item
   m_TagString: Item
@@ -122,3 +123,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &114492810931742430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5978899644927513442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c04769675456f431d9b772d41ed4fba3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 5978899644927513442}

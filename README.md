@@ -47,4 +47,4 @@ After setting up a couple of scenes and a couple of the providied Unity Test Pro
 Now that Items have dropped, they need to be transfered into the next scene.Created a gameobject to hold all the items that were dropped.Made it so that when an object is clicked it shifts them forward/backwards by 1 unit to avoid collisions. Also have it so the collisions between spawn rates don't collide and push them along faster. Created a basic timer to have the game timed.
 
 2/19/2020
-Created a game manager to handle the flow between scenes. Created a basic movement controller.
+Created a game manager to handle the flow between scenes. Created a basic movement controller. Item pickup has been done, Game Manager holds the the values of the objects.

@@ -736,7 +736,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac3e5c747a72b614cb331eeb9abfefa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 10
+  timer: 20
+  cannonBallCount: 0
+  barreltCount: 0
+  shooterItemCount: 0
   timerText: {fileID: 1494083665}
 --- !u!4 &979007300
 Transform:
