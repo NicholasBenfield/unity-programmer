@@ -14,59 +14,77 @@ public class GameManagers : MonoBehaviour
 
     private float minutes;
     private float seconds;
+    private int currentSceneNum;
     private GameObject[] respawners;
-    private GameObject respawn;
+    
 
-    // Start is called before the first frame update
+
     void Start()
     {
-        GameObject[] timers;
-        
-        minutes = (timer / 60);
-
         respawners = GameObject.FindGameObjectsWithTag("Respawn");
-        timers = GameObject.FindGameObjectsWithTag("UI Text");
-      
+        currentSceneNum = SceneManager.GetActiveScene().buildIndex;
 
-        if (SceneManager.GetActiveScene().buildIndex == 2)
+        if (currentSceneNum == 2)
         {
             for (int i = 0; i < respawners.Length; i++)
             {
                 respawners[i].transform.gameObject.SetActive(false);
             }
-
-            timers[0].transform.gameObject.SetActive(false);
-        }
-
+        }   
     }
 
     // Update is called once per frame
     void Update()
     {
-        timer -= Time.deltaTime;
-        minutes = Mathf.Floor(timer / 60);
-        seconds = Mathf.RoundToInt(timer % 60);
-
-        if (seconds == 60)
+        if (currentSceneNum == 1)
         {
-            timerText.text = "Time left: " + minutes + ":00";
+            timer -= Time.deltaTime;
+            minutes = Mathf.Floor(timer / 60);
+            seconds = Mathf.RoundToInt(timer % 60);
+
+            timerText.text = "Time left: " + minutes.ToString("00") + ":" + seconds.ToString("00");
+
+            if (minutes.ToString("00") == "00" && seconds.ToString("00") == "00")
+            {
+                GameOver(currentSceneNum);
+            }
+            
         }
 
-        timerText.text = "Time left: " + minutes + ":" + seconds;
-
-        if (timer < 0 )
+        if(currentSceneNum == 2)
         {
-            GameOver();
+            timer -= Time.deltaTime;
+            minutes = Mathf.Floor(timer / 60);
+            seconds = Mathf.RoundToInt(timer % 60);
+
+            timerText.text = "Time left: " + minutes.ToString("00") + ":" + seconds.ToString("00");
+
+            if (minutes.ToString("00") == "00" && seconds.ToString("00") == "00")
+            {
+                GameOver(currentSceneNum);
+            }
+        }
+
+        if (currentSceneNum == 3)
+        {
+            timer = 0;
         }
     }
 
-    void GameOver()
+    void GameOver(int num)
     {
-        for (int i = 0; i < respawners.Length; i++)
+        if (num == 1)
         {
-            respawners[i].transform.gameObject.SetActive(false);
+            for (int i = 0; i < respawners.Length; i++)
+            {
+                respawners[i].transform.gameObject.SetActive(false);
+            }
+            SceneManager.LoadScene(2);
         }
-
-        SceneManager.LoadScene(2);
+        else if (num == 2)
+        {
+            DontDestroyOnLoad(this);
+            SceneManager.LoadScene(3);
+        }
     }
 }

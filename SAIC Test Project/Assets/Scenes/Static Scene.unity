@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.49641287, b: 0.5748173, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -604,7 +604,6 @@ GameObject:
   - component: {fileID: 864733458}
   - component: {fileID: 864733457}
   - component: {fileID: 864733456}
-  - component: {fileID: 864733460}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -692,21 +691,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &864733460
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 864733455}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6676120e834e73e4fae19fe6ce802a0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: {fileID: 1494083665}
-  respawns: []
-  respawn: {fileID: 0}
 --- !u!1 &979007298
 GameObject:
   m_ObjectHideFlags: 0
@@ -736,9 +720,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac3e5c747a72b614cb331eeb9abfefa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 20
+  timer: 60
   cannonBallCount: 0
-  barreltCount: 0
+  barrelCount: 0
   shooterItemCount: 0
   timerText: {fileID: 1494083665}
 --- !u!4 &979007300
@@ -1298,7 +1282,7 @@ PrefabInstance:
         type: 3}
       propertyPath: keepAlive
       value: 
-      objectReference: {fileID: 622706169}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ba58c3a182f34e41a77545b26c6fb4b, type: 3}
 --- !u!1001 &2137576675

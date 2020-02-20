@@ -10,7 +10,6 @@ public class Character : MonoBehaviour
 
     public int Speed;
     public float gravity = 20.0f;
-    public float Jumpheight = 21;
     
     void Start()
     {
@@ -21,9 +20,10 @@ public class Character : MonoBehaviour
     void Update()
     {
         Vector3 move = new Vector3(-Input.GetAxis("Vertical"), 0, Input.GetAxis("Horizontal"));
-        
+      
 
-        if(move != Vector3.zero)
+
+        if (move != Vector3.zero)
         {
             transform.forward = move;
         }
@@ -35,7 +35,6 @@ public class Character : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Objects Name: " + other.name);
         if(other.name == "Barrell(Clone)")
         {
             Object.Destroy(other.gameObject);
