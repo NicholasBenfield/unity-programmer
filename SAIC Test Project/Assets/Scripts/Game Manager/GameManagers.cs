@@ -11,6 +11,9 @@ public class GameManagers : MonoBehaviour
     public int barrelCount;
     public int shooterItemCount;
     public Text timerText;
+    public Text barrelCountText;
+    public Text cannonBallCountText;
+    public Text shooterItemCountText;
 
     private float minutes;
     private float seconds;
@@ -69,6 +72,15 @@ public class GameManagers : MonoBehaviour
         {
             timer = 0;
         }
+
+
+    }
+
+    private void FixedUpdate()
+    {
+         barrelCountText.text = "Barrel Count: " + barrelCount;
+        cannonBallCountText.text = "Cannon Ball Count: " + cannonBallCount;
+        shooterItemCountText.text = "Shooter Item Count: " + shooterItemCount;
     }
 
     void GameOver(int num)
@@ -86,5 +98,6 @@ public class GameManagers : MonoBehaviour
             DontDestroyOnLoad(this);
             SceneManager.LoadScene(3);
         }
+
     }
 }

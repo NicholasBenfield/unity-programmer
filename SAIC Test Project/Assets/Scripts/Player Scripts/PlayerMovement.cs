@@ -14,10 +14,6 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(SceneManager.GetActiveScene().buildIndex == 2)
-        {
-            movmentScene = true;
-        }
         controller = GetComponent<CharacterController>();
     }
 
@@ -27,5 +23,10 @@ public class PlayerMovement : MonoBehaviour
             Vector3 Movement = new Vector3(Input.GetAxis("Horizonta"), 0, Input.GetAxis("Vertical"));
 
             controller.Move(Movement * Time.deltaTime * speed);
+
+        if(Input.GetKey(KeyCode.E))
+        {
+            Debug.Log("E was Pressed");
+        }
     }
 }

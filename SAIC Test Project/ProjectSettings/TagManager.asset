@@ -8,6 +8,7 @@ TagManager:
   - Item
   - Dropped
   - UI Text
+  - Inventory
   layers:
   - Default
   - TransparentFX
