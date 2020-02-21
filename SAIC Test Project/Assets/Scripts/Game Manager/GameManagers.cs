@@ -42,7 +42,7 @@ public class GameManagers : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Current Scene Number: " + currentSceneNum);
+
         if (currentSceneNum == 1)
         {
             timer -= Time.deltaTime;
@@ -116,7 +116,7 @@ public class GameManagers : MonoBehaviour
     {
         if (num == 1)
         {
-            timer = 20;
+            timer = 30;
             SceneManager.LoadScene(2);
             currentSceneNum++;
         }

@@ -22,7 +22,7 @@ public class Character : MonoBehaviour
     void Update()
     {
         Vector3 move = new Vector3(-Input.GetAxis("Vertical"), 0, Input.GetAxis("Horizontal"));
-      
+
         if (move != Vector3.zero)
         {
             transform.forward = move;

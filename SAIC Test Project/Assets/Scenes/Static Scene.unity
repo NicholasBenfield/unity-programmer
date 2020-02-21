@@ -720,14 +720,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac3e5c747a72b614cb331eeb9abfefa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 10
+  timer: 60
   cannonBallCount: 0
   barrelCount: 0
   shooterItemCount: 0
+  itemsClickedCount: 0
+  itemsPickedUpCount: 0
+  itemsMissedCount: 0
   timerText: {fileID: 1494083665}
   barrelCountText: {fileID: 0}
   cannonBallCountText: {fileID: 0}
   shooterItemCountText: {fileID: 0}
+  finalScoreText: {fileID: 0}
+  itemsClickedText: {fileID: 0}
+  itemsMissedText: {fileID: 0}
 --- !u!4 &979007300
 Transform:
   m_ObjectHideFlags: 0

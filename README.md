@@ -48,3 +48,9 @@ Now that Items have dropped, they need to be transfered into the next scene.Crea
 
 2/19/2020
 Created a game manager to handle the flow between scenes. Created a basic movement controller. Item pickup has been done, Game Manager holds the the values of the objects. Have a basic camera that follows the player around, but doesn't rotate. Created an inventory that when E is pressed displays and disappears accordinly. 
+
+2/20/2020
+Reworked some of the game manager for flows between scenes. Adjusted some values for spawn rates.Worked on a final scene with score values along with clicks and items missed picking up.
+
+2/21/2020
+Created a basic camera that flows the character and does a light rotation, but not completely around the character. Added a button for the game to end on the final scene.
