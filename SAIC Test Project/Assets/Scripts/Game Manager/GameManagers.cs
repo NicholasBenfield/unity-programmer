@@ -10,35 +10,39 @@ public class GameManagers : MonoBehaviour
     public int cannonBallCount;
     public int barrelCount;
     public int shooterItemCount;
+    public int itemsClickedCount;
+    public int itemsPickedUpCount;
+    public int itemsMissedCount;
     public Text timerText;
     public Text barrelCountText;
     public Text cannonBallCountText;
     public Text shooterItemCountText;
+    public Text finalScoreText;
+    public Text itemsClickedText;
+    public Text itemsMissedText;
 
     private float minutes;
     private float seconds;
     private int currentSceneNum;
+    private int finalScore;
     private GameObject[] respawners;
-    
-
+    private GameObject droppedItems;
+    private bool sceneLoaded = false;
 
     void Start()
     {
         respawners = GameObject.FindGameObjectsWithTag("Respawn");
         currentSceneNum = SceneManager.GetActiveScene().buildIndex;
 
-        if (currentSceneNum == 2)
-        {
-            for (int i = 0; i < respawners.Length; i++)
-            {
-                respawners[i].transform.gameObject.SetActive(false);
-            }
-        }   
+        droppedItems = GameObject.FindGameObjectWithTag("Dropped");
+
+        Object.DontDestroyOnLoad(this);
     }
 
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("Current Scene Number: " + currentSceneNum);
         if (currentSceneNum == 1)
         {
             timer -= Time.deltaTime;
@@ -54,6 +58,24 @@ public class GameManagers : MonoBehaviour
             
         }
 
+        if (currentSceneNum == 2)
+        {
+
+            GameObject barrelText = GameObject.Find("Barrell Count");
+            barrelCountText = barrelText.GetComponent<Text>();
+         
+            GameObject cannonBallText = GameObject.Find("Cannon Ball Count");
+            cannonBallCountText = cannonBallText.GetComponent<Text>();
+
+            GameObject shooterItemText = GameObject.Find("Shooter Items");
+            shooterItemCountText = shooterItemText.GetComponent<Text>();
+
+            GameObject timers = GameObject.Find("Timer Text");
+            timerText = timers.GetComponent<Text>();
+
+        }
+
+
         if(currentSceneNum == 2)
         {
             timer -= Time.deltaTime;
@@ -68,35 +90,85 @@ public class GameManagers : MonoBehaviour
             }
         }
 
+       
         if (currentSceneNum == 3)
         {
             timer = 0;
+
+            FinalScore();
         }
+
 
 
     }
 
     private void FixedUpdate()
     {
-         barrelCountText.text = "Barrel Count: " + barrelCount;
-        cannonBallCountText.text = "Cannon Ball Count: " + cannonBallCount;
-        shooterItemCountText.text = "Shooter Item Count: " + shooterItemCount;
+        if (currentSceneNum == 2)
+        {
+            barrelCountText.text = "Barrel Count: " + barrelCount;
+            cannonBallCountText.text = "Cannon Ball Count: " + cannonBallCount;
+            shooterItemCountText.text = "Shooter Item Count: " + shooterItemCount;
+        }
     }
 
     void GameOver(int num)
     {
         if (num == 1)
         {
-            for (int i = 0; i < respawners.Length; i++)
-            {
-                respawners[i].transform.gameObject.SetActive(false);
-            }
+            timer = 20;
             SceneManager.LoadScene(2);
+            currentSceneNum++;
         }
-        else if (num == 2)
+        if (num == 2)
         {
             DontDestroyOnLoad(this);
+            Object.Destroy(droppedItems);
+            currentSceneNum++;
             SceneManager.LoadScene(3);
+        }
+
+    }
+
+    void FinalScore()
+    {
+        if(sceneLoaded == false)
+        {
+            GameObject barrelText = GameObject.Find("Barrell Score");
+            barrelCountText = barrelText.GetComponent<Text>();
+
+            GameObject cannonBallText = GameObject.Find("Cannon Ball Score");
+            cannonBallCountText = cannonBallText.GetComponent<Text>();
+
+            GameObject shooterItemText = GameObject.Find("Shooter Item Score");
+            shooterItemCountText = shooterItemText.GetComponent<Text>();
+
+            GameObject scoreText = GameObject.Find("Total Score");
+            finalScoreText = scoreText.GetComponent<Text>();
+
+            GameObject clickedText = GameObject.Find("Total Clicked");
+            itemsClickedText = clickedText.GetComponent<Text>();
+
+            GameObject missedText = GameObject.Find("Total Missed");
+            itemsMissedText = missedText.GetComponent<Text>();
+
+            sceneLoaded = true;
+        }
+        else if (sceneLoaded == true)
+        {
+            finalScore = (cannonBallCount * 1) + (barrelCount * 3) + (shooterItemCount *2);
+
+            finalScoreText.text = "Total Score: " + finalScore;
+
+            barrelCountText.text = "Barrell Score: " + barrelCount + " * 3 = " + (barrelCount*3);
+            cannonBallCountText.text = "Cannon Ball Score: " + cannonBallCount + " * 1 = " + (cannonBallCount*1);
+            shooterItemCountText.text = "Shooter Item Score: " + shooterItemCount + " * 2 = " + (shooterItemCount*2);
+
+            itemsClickedText.text = "Total Items Clicked: " + itemsClickedCount;
+            itemsMissedCount = itemsClickedCount - itemsPickedUpCount;
+            itemsMissedText.text = "Total Items Not Picked Up:" + itemsMissedCount;
+    
+
         }
 
     }

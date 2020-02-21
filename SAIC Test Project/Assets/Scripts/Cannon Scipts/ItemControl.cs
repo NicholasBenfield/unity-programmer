@@ -44,6 +44,10 @@ public class ItemControl : MonoBehaviour
             movementSpeed.speed = 0;
             other.GetComponent<Rigidbody>().useGravity = true;
 
+            GameObject gameManager = GameObject.Find("Game Manager");
+            GameManagers gameManagers = gameManager.GetComponent<GameManagers>();
+            gameManagers.itemsClickedCount++;
+
             randomNumber = Random.Range(-2, 2);
 
             if (randomNumber != 0)

@@ -7,7 +7,6 @@ public class Character : MonoBehaviour
     private CharacterController _controller;
     private GameObject inventoryDisplay;
     private bool inventoryActive;
-    public GameManagers gameManager;
 
     public int Speed;
     public float gravity = 20.0f;
@@ -43,24 +42,32 @@ public class Character : MonoBehaviour
             inventoryDisplay.SetActive(true);
             inventoryActive = true;
         }
+
+        
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        GameObject gameManager = GameObject.Find("Game Manager");
+        GameManagers gameManagers = gameManager.GetComponent<GameManagers>();
+
         if(other.name == "Barrell(Clone)")
         {
             Object.Destroy(other.gameObject);
-            gameManager.barrelCount++;
+            gameManagers.barrelCount++;
+            gameManagers.itemsPickedUpCount++;
         }
         else if (other.name == "Shooter Item(Clone)")
         {
             Object.Destroy(other.gameObject);
-            gameManager.shooterItemCount++;
+            gameManagers.shooterItemCount++;
+            gameManagers.itemsPickedUpCount++;
         }
         else if (other.name == "Cannon Ball(Clone)")
         {
             Object.Destroy(other.gameObject);
-            gameManager.cannonBallCount++;
+            gameManagers.cannonBallCount++;
+            gameManagers.itemsPickedUpCount++;
         }
     }
 

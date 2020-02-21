@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 34513640}
   m_Layer: 5
   m_Name: Inventory
-  m_TagString: Untagged
+  m_TagString: Inventory
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -347,6 +347,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Respawn
+      objectReference: {fileID: 0}
+    - target: {fileID: 6972089540783889544, guid: 3ba58c3a182f34e41a77545b26c6fb4b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6972089540783889545, guid: 3ba58c3a182f34e41a77545b26c6fb4b,
         type: 3}
@@ -906,7 +911,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e490dfca4c52c422190f77bc43a3c752, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 1039702675}
+  gameManager: {fileID: 0}
   Speed: 3
   gravity: 20
 --- !u!143 &550295258
@@ -998,7 +1003,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &864733455
 GameObject:
@@ -1113,57 +1118,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6676120e834e73e4fae19fe6ce802a0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1039702674
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1039702676}
-  - component: {fileID: 1039702675}
-  m_Layer: 0
-  m_Name: Game Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1039702675
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1039702674}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac3e5c747a72b614cb331eeb9abfefa4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timer: 30
-  cannonBallCount: 0
-  barrelCount: 0
-  shooterItemCount: 0
-  timerText: {fileID: 1494083665}
-  barrelCountText: {fileID: 275752848}
-  cannonBallCountText: {fileID: 154813002}
-  shooterItemCountText: {fileID: 517646761}
---- !u!4 &1039702676
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1039702674}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 244.76567, y: 229.89099, z: 69.90727}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1146252026
 GameObject:
   m_ObjectHideFlags: 0
@@ -1255,7 +1209,7 @@ Transform:
   m_LocalScale: {x: 100.00006, y: 100, z: 100.00006}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &1146252031
 Rigidbody:
@@ -1505,6 +1459,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Respawn
       objectReference: {fileID: 0}
+    - target: {fileID: 6972089540783889544, guid: 3ba58c3a182f34e41a77545b26c6fb4b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6972089540783889545, guid: 3ba58c3a182f34e41a77545b26c6fb4b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1584,6 +1543,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Respawn
       objectReference: {fileID: 0}
+    - target: {fileID: 6972089540783889544, guid: 3ba58c3a182f34e41a77545b26c6fb4b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6972089540783889545, guid: 3ba58c3a182f34e41a77545b26c6fb4b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1662,6 +1626,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Respawn
+      objectReference: {fileID: 0}
+    - target: {fileID: 6972089540783889544, guid: 3ba58c3a182f34e41a77545b26c6fb4b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6972089540783889545, guid: 3ba58c3a182f34e41a77545b26c6fb4b,
         type: 3}
@@ -1810,6 +1779,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Respawn
+      objectReference: {fileID: 0}
+    - target: {fileID: 6972089540783889544, guid: 3ba58c3a182f34e41a77545b26c6fb4b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6972089540783889545, guid: 3ba58c3a182f34e41a77545b26c6fb4b,
         type: 3}

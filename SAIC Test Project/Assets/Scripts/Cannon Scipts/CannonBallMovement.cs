@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CannonBallMovement : MonoBehaviour
 {
@@ -18,9 +19,12 @@ public class CannonBallMovement : MonoBehaviour
 
     void Start()
     {
-        secondsBetweenSpawn = 3;
-        keepAlive = GameObject.Find("Dropped Items");
-        DontDestroyOnLoad(keepAlive);
+        if (SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            secondsBetweenSpawn = 3;
+            keepAlive = GameObject.Find("Dropped Items");
+            DontDestroyOnLoad(keepAlive);
+        }
 
     }
 
