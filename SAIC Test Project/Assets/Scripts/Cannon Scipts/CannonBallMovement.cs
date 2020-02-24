@@ -31,17 +31,6 @@ public class CannonBallMovement : MonoBehaviour
     void Update()
     {
         Spawn(Random.Range(0, 3));
-        /*
-        if (Input.GetMouseButtonDown(0))
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit))
-            {
-                ObjectChange(hit.collider.gameObject);
-            }
-        }
-        */
     }
 
     void ObjectChange(GameObject other)

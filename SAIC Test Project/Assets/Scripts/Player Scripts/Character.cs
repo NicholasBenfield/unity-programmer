@@ -1,11 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Character : MonoBehaviour
 {
     private CharacterController _controller;
-    private GameObject inventoryDisplay;
     private bool inventoryActive;
 
     public int Speed;
@@ -14,8 +14,8 @@ public class Character : MonoBehaviour
     void Start()
     {
         _controller = GetComponent<CharacterController>();
-        inventoryDisplay = GameObject.FindGameObjectWithTag("Inventory");
         inventoryActive = false;
+        TurnedOff();
         
     }
 
@@ -34,18 +34,52 @@ public class Character : MonoBehaviour
 
         if (Input.GetButtonDown("Inventory") && inventoryActive == true)
         {
-            inventoryDisplay.SetActive(false);
+            TurnedOff();
             inventoryActive = false;
         }
         else if (Input.GetButtonDown("Inventory") && inventoryActive == false)
         {
-            inventoryDisplay.SetActive(true);
+            TurnedOn();
             inventoryActive = true;
         }
-
-        
     }
 
+    void TurnedOff()
+    {
+        GameObject panel = GameObject.Find("Panel");
+        panel.GetComponent<Image>().enabled = false;
+
+        GameObject inventoryTitle = GameObject.Find("Inventory");
+        inventoryTitle.GetComponent<Text>().enabled = false;
+
+        GameObject ballText = GameObject.Find("Barrell Count");
+        ballText.GetComponent<Text>().enabled = false;
+
+        GameObject cannonText = GameObject.Find("Cannon Ball Count");
+        cannonText.GetComponent<Text>().enabled = false;
+
+        GameObject shooterText = GameObject.Find("Shooter Items");
+        shooterText.GetComponent<Text>().enabled = false;
+    }
+
+    void TurnedOn()
+    {
+        GameObject panel = GameObject.Find("Panel");
+        panel.GetComponent<Image>().enabled = true;
+
+        GameObject inventoryTitle = GameObject.Find("Inventory");
+        inventoryTitle.GetComponent<Text>().enabled = true;
+
+        GameObject ballText = GameObject.Find("Barrell Count");
+        ballText.GetComponent<Text>().enabled = true;
+
+        GameObject cannonText = GameObject.Find("Cannon Ball Count");
+        cannonText.GetComponent<Text>().enabled = true;
+
+        GameObject shooterText = GameObject.Find("Shooter Items");
+        shooterText.GetComponent<Text>().enabled = true;
+    }
+ 
     private void OnTriggerEnter(Collider other)
     {
         GameObject gameManager = GameObject.Find("Game Manager");

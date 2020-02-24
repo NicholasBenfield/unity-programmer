@@ -12,14 +12,14 @@ public class GameManagers : MonoBehaviour
     public int shooterItemCount;
     public int itemsClickedCount;
     public int itemsPickedUpCount;
-    public int itemsMissedCount;
+    private int itemsMissedCount;
     public Text timerText;
-    public Text barrelCountText;
-    public Text cannonBallCountText;
-    public Text shooterItemCountText;
-    public Text finalScoreText;
-    public Text itemsClickedText;
-    public Text itemsMissedText;
+    private Text barrelCountText;
+    private Text cannonBallCountText;
+    private Text shooterItemCountText;
+    private Text finalScoreText;
+    private Text itemsClickedText;
+    private Text itemsMissedText;
 
     private float minutes;
     private float seconds;
@@ -58,9 +58,8 @@ public class GameManagers : MonoBehaviour
             
         }
 
-        if (currentSceneNum == 2)
+        if(currentSceneNum == 2)
         {
-
             GameObject barrelText = GameObject.Find("Barrell Count");
             barrelCountText = barrelText.GetComponent<Text>();
          
@@ -73,11 +72,8 @@ public class GameManagers : MonoBehaviour
             GameObject timers = GameObject.Find("Timer Text");
             timerText = timers.GetComponent<Text>();
 
-        }
 
 
-        if(currentSceneNum == 2)
-        {
             timer -= Time.deltaTime;
             minutes = Mathf.Floor(timer / 60);
             seconds = Mathf.RoundToInt(timer % 60);
@@ -88,27 +84,17 @@ public class GameManagers : MonoBehaviour
             {
                 GameOver(currentSceneNum);
             }
+
+            barrelCountText.text = "Barrel Count: " + barrelCount;
+            cannonBallCountText.text = "Cannon Ball Count: " + cannonBallCount;
+            shooterItemCountText.text = "Shooter Item Count: " + shooterItemCount;
         }
 
-       
         if (currentSceneNum == 3)
         {
             timer = 0;
 
             FinalScore();
-        }
-
-
-
-    }
-
-    private void FixedUpdate()
-    {
-        if (currentSceneNum == 2)
-        {
-            barrelCountText.text = "Barrel Count: " + barrelCount;
-            cannonBallCountText.text = "Cannon Ball Count: " + cannonBallCount;
-            shooterItemCountText.text = "Shooter Item Count: " + shooterItemCount;
         }
     }
 
@@ -166,7 +152,7 @@ public class GameManagers : MonoBehaviour
 
             itemsClickedText.text = "Total Items Clicked: " + itemsClickedCount;
             itemsMissedCount = itemsClickedCount - itemsPickedUpCount;
-            itemsMissedText.text = "Total Items Not Picked Up:" + itemsMissedCount;
+            itemsMissedText.text = "Total Items Not Picked Up: " + itemsMissedCount;
     
 
         }

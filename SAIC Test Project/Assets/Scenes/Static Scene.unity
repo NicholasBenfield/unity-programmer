@@ -726,14 +726,7 @@ MonoBehaviour:
   shooterItemCount: 0
   itemsClickedCount: 0
   itemsPickedUpCount: 0
-  itemsMissedCount: 0
   timerText: {fileID: 1494083665}
-  barrelCountText: {fileID: 0}
-  cannonBallCountText: {fileID: 0}
-  shooterItemCountText: {fileID: 0}
-  finalScoreText: {fileID: 0}
-  itemsClickedText: {fileID: 0}
-  itemsMissedText: {fileID: 0}
 --- !u!4 &979007300
 Transform:
   m_ObjectHideFlags: 0
